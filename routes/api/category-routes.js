@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
       include: [{model:Product}],
     });
     if (!categoryData) {
-      res.status(404).json({ message: "No Categories found with that id! ぞのIDのカテゴリは見つかりませんでした！"})
+      res.status(404).json({ message: "No Categories found with that id!"})
     return;
     }
     res.status(200).json(categoryData);
@@ -43,7 +43,7 @@ router.put('/:id', (req, res) => {
   where: { id: req.params.id}
   });
   if (!categoryData) {
-    res.status(404).json({message: "No Category found with that ID! そのIDのカテゴリが見つかりませんでした"})
+    res.status(404).json({message: "No Category found with that ID!"})
   return;
   }
   res.status(200).json(categoryData);
@@ -58,7 +58,7 @@ router.delete('/:id', (req, res) => {
     where: {id: req.params.id}
     });
     if (!deleteCategoryData) {
-      res.status(404).json({message: "No Category found with that ID! そのIDのカテゴリが見つかりませんでした"})
+      res.status(404).json({message: "No Category found with that ID!"})
     return;
     }
     res.status(200).json(deleteCategoryData);
